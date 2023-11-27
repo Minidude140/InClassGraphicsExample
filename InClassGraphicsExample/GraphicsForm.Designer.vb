@@ -86,7 +86,9 @@ Partial Class GraphicsForm
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ButtonGroupBox)
         Me.Controls.Add(Me.DisplayGroupBox)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GraphicsForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Let's Draw"
         Me.DisplayGroupBox.ResumeLayout(False)
         CType(Me.DrawingPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
