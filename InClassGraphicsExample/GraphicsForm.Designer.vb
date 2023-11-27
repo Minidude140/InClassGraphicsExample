@@ -23,13 +23,13 @@ Partial Class GraphicsForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DisplayGroupBox = New System.Windows.Forms.GroupBox()
-        Me.ButtonGroupBox = New System.Windows.Forms.GroupBox()
         Me.DrawingPictureBox = New System.Windows.Forms.PictureBox()
-        Me.ClearButton = New System.Windows.Forms.Button()
+        Me.ButtonGroupBox = New System.Windows.Forms.GroupBox()
         Me.ExitButton = New System.Windows.Forms.Button()
+        Me.ClearButton = New System.Windows.Forms.Button()
         Me.DisplayGroupBox.SuspendLayout()
-        Me.ButtonGroupBox.SuspendLayout()
         CType(Me.DrawingPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ButtonGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'DisplayGroupBox
@@ -41,6 +41,14 @@ Partial Class GraphicsForm
         Me.DisplayGroupBox.TabIndex = 0
         Me.DisplayGroupBox.TabStop = False
         '
+        'DrawingPictureBox
+        '
+        Me.DrawingPictureBox.Location = New System.Drawing.Point(4, 13)
+        Me.DrawingPictureBox.Name = "DrawingPictureBox"
+        Me.DrawingPictureBox.Size = New System.Drawing.Size(753, 298)
+        Me.DrawingPictureBox.TabIndex = 0
+        Me.DrawingPictureBox.TabStop = False
+        '
         'ButtonGroupBox
         '
         Me.ButtonGroupBox.Controls.Add(Me.ExitButton)
@@ -51,13 +59,14 @@ Partial Class GraphicsForm
         Me.ButtonGroupBox.TabIndex = 1
         Me.ButtonGroupBox.TabStop = False
         '
-        'DrawingPictureBox
+        'ExitButton
         '
-        Me.DrawingPictureBox.Location = New System.Drawing.Point(4, 13)
-        Me.DrawingPictureBox.Name = "DrawingPictureBox"
-        Me.DrawingPictureBox.Size = New System.Drawing.Size(753, 298)
-        Me.DrawingPictureBox.TabIndex = 0
-        Me.DrawingPictureBox.TabStop = False
+        Me.ExitButton.Location = New System.Drawing.Point(647, 20)
+        Me.ExitButton.Name = "ExitButton"
+        Me.ExitButton.Size = New System.Drawing.Size(107, 89)
+        Me.ExitButton.TabIndex = 1
+        Me.ExitButton.Text = "&Exit"
+        Me.ExitButton.UseVisualStyleBackColor = True
         '
         'ClearButton
         '
@@ -68,15 +77,6 @@ Partial Class GraphicsForm
         Me.ClearButton.TabIndex = 0
         Me.ClearButton.Text = "&Clear"
         Me.ClearButton.UseVisualStyleBackColor = True
-        '
-        'ExitButton
-        '
-        Me.ExitButton.Location = New System.Drawing.Point(647, 20)
-        Me.ExitButton.Name = "ExitButton"
-        Me.ExitButton.Size = New System.Drawing.Size(107, 89)
-        Me.ExitButton.TabIndex = 1
-        Me.ExitButton.Text = "&Exit"
-        Me.ExitButton.UseVisualStyleBackColor = True
         '
         'GraphicsForm
         '
@@ -89,8 +89,8 @@ Partial Class GraphicsForm
         Me.Name = "GraphicsForm"
         Me.Text = "Let's Draw"
         Me.DisplayGroupBox.ResumeLayout(False)
-        Me.ButtonGroupBox.ResumeLayout(False)
         CType(Me.DrawingPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ButtonGroupBox.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
