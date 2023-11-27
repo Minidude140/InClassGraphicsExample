@@ -33,4 +33,7 @@ Public Class GraphicsForm
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
+    Private Sub DrawingPictureBox_MouseMove(sender As Object, e As MouseEventArgs) Handles DrawingPictureBox.MouseMove
+        Me.Text = $"({e.X}),({e.Y}) Button: {e.Button}"
+    End Sub
 End Class
