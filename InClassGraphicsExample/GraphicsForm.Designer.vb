@@ -27,6 +27,7 @@ Partial Class GraphicsForm
         Me.ButtonGroupBox = New System.Windows.Forms.GroupBox()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.DisplayGroupBox.SuspendLayout()
         CType(Me.DrawingPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ButtonGroupBox.SuspendLayout()
@@ -102,4 +103,5 @@ Partial Class GraphicsForm
     Friend WithEvents ButtonGroupBox As GroupBox
     Friend WithEvents ExitButton As Button
     Friend WithEvents ClearButton As Button
+    Friend WithEvents ColorDialog1 As ColorDialog
 End Class
