@@ -19,6 +19,7 @@ Public Class GraphicsForm
         Me.backgroundColor = Color.BlanchedAlmond
 
         DrawingPictureBox.BackColor = Me.backgroundColor
+        DrawingPictureBox.Refresh()
     End Sub
 
     ''' <summary>
@@ -41,7 +42,7 @@ Public Class GraphicsForm
         SetDefaults()
     End Sub
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
-        SetDefaults()
+        DrawingPictureBox.Refresh()
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
