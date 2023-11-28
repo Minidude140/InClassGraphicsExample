@@ -42,13 +42,20 @@ Public Class GraphicsForm
     End Sub
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         SetDefaults()
-        DrawLine()
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
     End Sub
-    Private Sub DrawingPictureBox_MouseMove(sender As Object, e As MouseEventArgs) Handles DrawingPictureBox.MouseMove
+    Private Sub DrawingPictureBox_MouseMove(sender As Object, e As MouseEventArgs) Handles DrawingPictureBox.MouseMove, DrawingPictureBox.MouseDown
         Me.Text = $"({e.X}),({e.Y}) Button: {e.Button}"
+        Static oldX As Integer
+        Static oldY As Integer
+        Select Case True
+            Case e.Button = MouseButtons.Left
+                DrawLine(oldX, oldY, e.X, e.Y)
+        End Select
+        oldX = e.X
+        oldY = e.Y
     End Sub
     Private Sub DrawingPictureBox_MouseDown(sender As Object, e As MouseEventArgs) Handles DrawingPictureBox.MouseDown
         Me.Text = $"({e.X}),({e.Y}) Button: {e.Button}"
