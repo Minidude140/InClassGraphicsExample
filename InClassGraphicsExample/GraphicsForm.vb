@@ -12,10 +12,13 @@ Public Class GraphicsForm
     Dim foregroundColor As Color
     'Custom Methods
     ''' <summary>
-    ''' Sets the standard background color
+    ''' Sets the standard background and foreground color
     ''' </summary>
     Sub SetDefaults()
-        DrawingPictureBox.BackColor = Color.BlanchedAlmond
+        Me.foregroundColor = Color.Black
+        Me.backgroundColor = Color.BlanchedAlmond
+
+        DrawingPictureBox.BackColor = Me.backgroundColor
     End Sub
 
     ''' <summary>
@@ -25,7 +28,7 @@ Public Class GraphicsForm
         'initialize graphics object and set drawing surface to picture box
         Dim g As Graphics = DrawingPictureBox.CreateGraphics
         'initialize pen as color black
-        Dim pen As New Pen(Color.Black)
+        Dim pen As New Pen(Me.foregroundColor)
         'draws a line from given co-ordinates (x,y) to (x,y); (0,0) in upper left hand corner
         g.DrawLine(pen, x1, y1, x2, y2)
         'dispose of the pen and graphics object to clear memory
