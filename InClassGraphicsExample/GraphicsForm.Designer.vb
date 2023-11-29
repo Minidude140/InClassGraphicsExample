@@ -39,6 +39,9 @@ Partial Class GraphicsForm
         '
         'DrawingPictureBox
         '
+        Me.DrawingPictureBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DrawingPictureBox.ContextMenuStrip = Me.ContextMenuStrip
         Me.DrawingPictureBox.Location = New System.Drawing.Point(12, 25)
         Me.DrawingPictureBox.Name = "DrawingPictureBox"
@@ -48,11 +51,13 @@ Partial Class GraphicsForm
         '
         'ButtonGroupBox
         '
+        Me.ButtonGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.ButtonGroupBox.AutoSize = True
         Me.ButtonGroupBox.Controls.Add(Me.ExitButton)
         Me.ButtonGroupBox.Controls.Add(Me.ClearButton)
-        Me.ButtonGroupBox.Location = New System.Drawing.Point(12, 329)
+        Me.ButtonGroupBox.Location = New System.Drawing.Point(12, 318)
         Me.ButtonGroupBox.Name = "ButtonGroupBox"
-        Me.ButtonGroupBox.Size = New System.Drawing.Size(760, 119)
+        Me.ButtonGroupBox.Size = New System.Drawing.Size(760, 130)
         Me.ButtonGroupBox.TabIndex = 1
         Me.ButtonGroupBox.TabStop = False
         '
@@ -109,7 +114,6 @@ Partial Class GraphicsForm
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.DrawingPictureBox)
         Me.Controls.Add(Me.ButtonGroupBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GraphicsForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Let's Draw"
@@ -117,6 +121,7 @@ Partial Class GraphicsForm
         Me.ButtonGroupBox.ResumeLayout(False)
         Me.ContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DrawingPictureBox As PictureBox
