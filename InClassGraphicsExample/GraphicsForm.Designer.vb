@@ -42,10 +42,11 @@ Partial Class GraphicsForm
         Me.DrawingPictureBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DrawingPictureBox.BackColor = System.Drawing.Color.BlanchedAlmond
         Me.DrawingPictureBox.ContextMenuStrip = Me.ContextMenuStrip
         Me.DrawingPictureBox.Location = New System.Drawing.Point(12, 25)
         Me.DrawingPictureBox.Name = "DrawingPictureBox"
-        Me.DrawingPictureBox.Size = New System.Drawing.Size(760, 298)
+        Me.DrawingPictureBox.Size = New System.Drawing.Size(760, 301)
         Me.DrawingPictureBox.TabIndex = 0
         Me.DrawingPictureBox.TabStop = False
         '
@@ -55,7 +56,7 @@ Partial Class GraphicsForm
         Me.ButtonGroupBox.AutoSize = True
         Me.ButtonGroupBox.Controls.Add(Me.ExitButton)
         Me.ButtonGroupBox.Controls.Add(Me.ClearButton)
-        Me.ButtonGroupBox.Location = New System.Drawing.Point(12, 318)
+        Me.ButtonGroupBox.Location = New System.Drawing.Point(12, 321)
         Me.ButtonGroupBox.Name = "ButtonGroupBox"
         Me.ButtonGroupBox.Size = New System.Drawing.Size(760, 130)
         Me.ButtonGroupBox.TabIndex = 1
@@ -111,9 +112,10 @@ Partial Class GraphicsForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ClearButton
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 453)
         Me.Controls.Add(Me.DrawingPictureBox)
         Me.Controls.Add(Me.ButtonGroupBox)
+        Me.MinimumSize = New System.Drawing.Size(818, 500)
         Me.Name = "GraphicsForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Let's Draw"
