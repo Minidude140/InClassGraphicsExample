@@ -22,31 +22,27 @@ Partial Class GraphicsForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DisplayGroupBox = New System.Windows.Forms.GroupBox()
+        Me.components = New System.ComponentModel.Container()
         Me.DrawingPictureBox = New System.Windows.Forms.PictureBox()
         Me.ButtonGroupBox = New System.Windows.Forms.GroupBox()
         Me.ExitButton = New System.Windows.Forms.Button()
         Me.ClearButton = New System.Windows.Forms.Button()
-        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
-        Me.DisplayGroupBox.SuspendLayout()
+        Me.ColorDialog = New System.Windows.Forms.ColorDialog()
+        Me.ContextMenuStrip = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ChangeColorContextMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ForegroundContextMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BackgroundContextMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DrawingPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ButtonGroupBox.SuspendLayout()
+        Me.ContextMenuStrip.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'DisplayGroupBox
-        '
-        Me.DisplayGroupBox.Controls.Add(Me.DrawingPictureBox)
-        Me.DisplayGroupBox.Location = New System.Drawing.Point(12, 12)
-        Me.DisplayGroupBox.Name = "DisplayGroupBox"
-        Me.DisplayGroupBox.Size = New System.Drawing.Size(761, 317)
-        Me.DisplayGroupBox.TabIndex = 0
-        Me.DisplayGroupBox.TabStop = False
         '
         'DrawingPictureBox
         '
-        Me.DrawingPictureBox.Location = New System.Drawing.Point(4, 13)
+        Me.DrawingPictureBox.ContextMenuStrip = Me.ContextMenuStrip
+        Me.DrawingPictureBox.Location = New System.Drawing.Point(12, 25)
         Me.DrawingPictureBox.Name = "DrawingPictureBox"
-        Me.DrawingPictureBox.Size = New System.Drawing.Size(753, 298)
+        Me.DrawingPictureBox.Size = New System.Drawing.Size(760, 298)
         Me.DrawingPictureBox.TabIndex = 0
         Me.DrawingPictureBox.TabStop = False
         '
@@ -79,29 +75,57 @@ Partial Class GraphicsForm
         Me.ClearButton.Text = "&Clear"
         Me.ClearButton.UseVisualStyleBackColor = True
         '
+        'ContextMenuStrip
+        '
+        Me.ContextMenuStrip.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeColorContextMenuItem})
+        Me.ContextMenuStrip.Name = "ContextMenuStrip"
+        Me.ContextMenuStrip.Size = New System.Drawing.Size(169, 28)
+        '
+        'ChangeColorContextMenuItem
+        '
+        Me.ChangeColorContextMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ForegroundContextMenuItem, Me.BackgroundContextMenuItem})
+        Me.ChangeColorContextMenuItem.Name = "ChangeColorContextMenuItem"
+        Me.ChangeColorContextMenuItem.Size = New System.Drawing.Size(210, 24)
+        Me.ChangeColorContextMenuItem.Text = "Change Color"
+        '
+        'ForegroundContextMenuItem
+        '
+        Me.ForegroundContextMenuItem.Name = "ForegroundContextMenuItem"
+        Me.ForegroundContextMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ForegroundContextMenuItem.Text = "Foreground"
+        '
+        'BackgroundContextMenuItem
+        '
+        Me.BackgroundContextMenuItem.Name = "BackgroundContextMenuItem"
+        Me.BackgroundContextMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.BackgroundContextMenuItem.Text = "Background"
+        '
         'GraphicsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ClearButton
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.DrawingPictureBox)
         Me.Controls.Add(Me.ButtonGroupBox)
-        Me.Controls.Add(Me.DisplayGroupBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "GraphicsForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Let's Draw"
-        Me.DisplayGroupBox.ResumeLayout(False)
         CType(Me.DrawingPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ButtonGroupBox.ResumeLayout(False)
+        Me.ContextMenuStrip.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents DisplayGroupBox As GroupBox
     Friend WithEvents DrawingPictureBox As PictureBox
     Friend WithEvents ButtonGroupBox As GroupBox
     Friend WithEvents ExitButton As Button
     Friend WithEvents ClearButton As Button
-    Friend WithEvents ColorDialog1 As ColorDialog
+    Friend WithEvents ColorDialog As ColorDialog
+    Friend WithEvents ContextMenuStrip As ContextMenuStrip
+    Friend WithEvents ChangeColorContextMenuItem As ToolStripMenuItem
+    Friend WithEvents ForegroundContextMenuItem As ToolStripMenuItem
+    Friend WithEvents BackgroundContextMenuItem As ToolStripMenuItem
 End Class

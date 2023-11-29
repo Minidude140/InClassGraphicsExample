@@ -25,7 +25,7 @@ Public Class GraphicsForm
     ''' <summary>
     ''' Draws a line from the first given point to the second given point
     ''' </summary>
-    Sub DrawLine(x1%, y1%, x2%, y2%)
+    Sub DrawLine(x1%, y1%, x2%, y2%) 'denotation of % means declare as integer
         'initialize graphics object and set drawing surface to picture box
         Dim g As Graphics = DrawingPictureBox.CreateGraphics
         'initialize pen as color black
@@ -35,6 +35,21 @@ Public Class GraphicsForm
         'dispose of the pen and graphics object to clear memory
         pen.Dispose()
         g.Dispose()
+    End Sub
+
+    ''' <summary>
+    ''' Change the foreground color by default.  
+    ''' Optional change background color(Set second parameter false).
+    ''' </summary>
+    ''' <param name="newColor"></param>
+    ''' <param name="foreground"></param>
+    Sub ChangeColor(newColor As Color, Optional foreground As Boolean = True)
+        If foreground = True Then
+            Me.foregroundColor = newColor
+        Else
+            Me.backgroundColor = newColor
+            DrawingPictureBox.BackColor = newColor
+        End If
     End Sub
 
     'Event Handlers
@@ -63,5 +78,13 @@ Public Class GraphicsForm
     End Sub
     Private Sub DrawingPictureBox_MouseLeave(sender As Object, e As EventArgs) Handles DrawingPictureBox.MouseLeave
         Me.Text = "Let's Draw"
+    End Sub
+    Private Sub ForegroundContextMenuItem_Click(sender As Object, e As EventArgs) Handles ForegroundContextMenuItem.Click
+        ColorDialog.ShowDialog()
+        ChangeColor(ColorDialog.Color)
+    End Sub
+    Private Sub BackgroundContextMenuItem_Click(sender As Object, e As EventArgs) Handles BackgroundContextMenuItem.Click
+        ColorDialog.ShowDialog()
+        ChangeColor(ColorDialog.Color, False)
     End Sub
 End Class
