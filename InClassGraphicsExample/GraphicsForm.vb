@@ -62,7 +62,7 @@ Public Class GraphicsForm
         Const pi As Double = System.Math.PI
         'iterate through the x and calculate y
         For x = 0 To xMax Step (xMax / 360)
-            newX = CInt(x * (DrawingPictureBox.Width / 360))
+            newX = CInt(x * (xMax / 360))
             newY = CInt(((yMax - 10) * System.Math.Sin(((x * pi) / 180) + pi)) + yMax)
             DrawLine(oldX, oldY, newX, newY)
             oldX = newX
