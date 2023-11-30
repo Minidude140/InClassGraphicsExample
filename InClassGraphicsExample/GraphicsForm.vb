@@ -7,6 +7,9 @@
 Option Strict On
 Option Explicit On
 
+'Instantaneous Voltage Formula
+'Vi = Vp * Sin((360*f) * t =/- Theta) + DC
+
 Public Class GraphicsForm
     Dim backgroundColor As Color
     Dim foregroundColor As Color
@@ -52,12 +55,28 @@ Public Class GraphicsForm
         End If
     End Sub
 
+    Sub DrawWave()
+        Dim oldX%, oldY%, newX%, newY%
+        Dim yMax As Integer = (DrawingPictureBox.Height \ 2)
+        Dim xMax As Integer = DrawingPictureBox.Width
+        Const pi As Double = System.Math.PI
+        'iterate through the x and calculate y
+        For x = 0 To xMax Step (xMax / 360)
+            newX = CInt(x * (DrawingPictureBox.Width / 360))
+            newY = CInt(((yMax - 10) * System.Math.Sin(((x * pi) / 180) + pi)) + yMax)
+            DrawLine(oldX, oldY, newX, newY)
+            oldX = newX
+            oldY = newY
+        Next
+    End Sub
+
     'Event Handlers
     Private Sub GraphicsForm_Load(sender As Object, e As EventArgs) Handles Me.Load
         SetDefaults()
     End Sub
     Private Sub ClearButton_Click(sender As Object, e As EventArgs) Handles ClearButton.Click
         DrawingPictureBox.Refresh()
+        DrawWave()
     End Sub
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Me.Close()
